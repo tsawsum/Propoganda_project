@@ -19,7 +19,8 @@ logger = logging.getLogger(__name__)
 
 
 def Main(args):
-    nlp = spacy.load("en")
+    # python -m spacy download en_core_web_sm
+    nlp = spacy.load("en_core_web_sm")
     if not os.path.exists(args.data_dir):
         os.makedirs(args.data_dir)
     

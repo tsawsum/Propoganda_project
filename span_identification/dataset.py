@@ -79,7 +79,7 @@ def token_label_from_spans(pos, spans):
                     
 def create_BIO_labeled(file, data, articles_content_dict, nlp):
     prev_label = 'O'
-    with open(file, 'w') as f:
+    with open(file, 'w', encoding = "utf-8") as f:
         for article_id, spans in tqdm(data):
             text = articles_content_dict[article_id]
             tokens = [(token.idx, token.text) for token in nlp(text)]
